@@ -1,13 +1,54 @@
 package stepDefinition;
 
+import base.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Util;
 
-public class SocialImpactSteps {
+import java.time.Duration;
 
-    @Given("User is already on Sustainability Creating Social Impact page")
+public class SocialImpactSteps extends BaseClass {
+
+    /**
+     * Logger for info logs, WebDriverWait for elements to load
+     */
+    Logger logger = LogManager.getLogger(SocialImpactSteps.class.getName());
+    WebDriverWait wait;
+
+    /**
+     * Page Factory with @CacheLookup for faster retrieval of WebElements
+     */
+    @CacheLookup @FindBy(id = "fullframe") WebElement calculatorFrame;
+    @CacheLookup @FindBy(id = "canvas") WebElement calculatorCanvas;
+
+
+    @Given("Browser is Open")
+    public boolean browserIsOpen() {
+        initDriver();
+        PageFactory.initElements(driver, this);
+        String defaultUrl = prop.getProperty("defaultUrl");
+        try {
+            logger.info("DBS default page is launched");
+            driver.get(defaultUrl);
+            return driver.getCurrentUrl().equals(prop.getProperty("defaultUrl"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @And("User is already on Sustainability Creating Social Impact page")
     public void user_is_already_on_sustainability_creating_social_impact_page() {
         System.out.println("Inside Given");
     }
@@ -41,4 +82,5 @@ public class SocialImpactSteps {
     public void navigate_to_about_page() {
         System.out.println("Inside Given");
     }
+
 }
