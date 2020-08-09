@@ -72,7 +72,7 @@ public class BaseClass {
     public static void waitForElement(WebElement element, Duration timeout) {
         try {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
 
         } catch (Exception e) {
         e.printStackTrace();
