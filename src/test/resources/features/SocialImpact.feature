@@ -1,6 +1,6 @@
-@DefaultScenario
+@SocialImpactScenario
 Feature: Learn More About DBS Singapore
-  @DefaultTest
+  @SocialImpactTest
   Scenario Outline: Navigate to DBS Learn More page to collect F&B Businesses data and store in a excel file
     Given User is already on Sustainability Creating Social Impact page
     When <City> F&B businesses data is available and displayed for user

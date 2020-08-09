@@ -38,6 +38,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>de.monochromata.cucumber</groupId>
+            <artifactId>reporting-plugin</artifactId>
+            <version>4.0.69</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -57,7 +64,27 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
             </plugin>
+            <plugin>
+                <groupId>com.trivago.rta</groupId>
+                <artifactId>cluecumber-report-plugin</artifactId>
+                <version>2.4.0</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>reporting</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
+                </configuration>
+            </plugin>
         </plugins>
+
+
     </build>
 
 </project>
