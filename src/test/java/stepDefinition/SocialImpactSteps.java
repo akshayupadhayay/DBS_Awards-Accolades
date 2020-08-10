@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import base.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,8 +13,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utility.ExcelAPI;
 
-import base.BaseClass;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,9 +36,8 @@ public class SocialImpactSteps extends BaseClass {
     @CacheLookup @FindBy(xpath = "//a[@class='nav-link hasDevice active']") WebElement citySingaporeIsActive;
     @CacheLookup @FindBy(xpath = "//tr") List<WebElement> rowElements;
     @CacheLookup @FindBy(xpath = "//tr[1]/*") List<WebElement> columnElements;
-
-
-
+    @CacheLookup @FindBy(xpath = "//div[@class='navbar-links-left']//a[contains(text(),'About')]") WebElement aboutPageLink;
+    @CacheLookup @FindBy(xpath = "//a[contains(text(),'Who We Are')]") WebElement whoWeAreTab;
 
     @Given("Browser is Open")
     public boolean browserIsOpen() {
@@ -68,42 +69,49 @@ public class SocialImpactSteps extends BaseClass {
         Assert.assertTrue(citySingaporeIsActive.isEnabled());
     }
 
-    @Then("Read & retrieve the table data from cells")
-    public void read_retrieve_the_table_data_from_cells() {
+    @Then("Read & retrieve the table data from cells and write to excel")
+    public void read_retrieve_the_table_data_from_cells_and_write_to_excel() throws IOException {
+        ExcelAPI excelAPI = new ExcelAPI("src/excelExportAndFileIO/FBBusiness.xlsx");
         int tableRowCount = rowElements.size();
         int tableColumnCount = columnElements.size();
         logger.info("Table row count:\t" + tableRowCount);
         logger.info("Table column count:\t" + tableColumnCount);
 
-        LinkedHashMap<String, String> cellData = new LinkedHashMap<>();
+        LinkedHashMap<String, String> cellMap = new LinkedHashMap<>();
         for(int i = 1; i <= tableRowCount; i++){
             for(int j = 1; j <= tableColumnCount; j++){
                 String cellName = i + "," + j;
                 String cellText = driver.findElement(By.xpath("//tr[" + i + "]//td[" + j + "]")).getText();
-                cellData.put(cellName, cellText);
+                cellMap.put(cellName, cellText);
+                excelAPI.setCellData("tableOne", j-1, i-1, cellText);
             }
         }
-        System.out.println("Test Stop");
+        logger.info("Verifying that the web table is displayed - Map size should be greater than zero");
+        Assert.assertTrue(cellMap.size() != 0);
+        logger.info("Web Table size is " + cellMap.size());
     }
 
-    @Then("Copy and Store the data into a database\\(Excel)")
-    public void copy_and_store_the_data_into_a_database_excel() {
-        System.out.println("Inside Given");
-    }
-
-    @Then("Save the file under folder structure")
-    public void save_the_file_under_folder_structure() {
-        System.out.println("Inside Given");
-    }
-
-    @Then("Validate the file size is not zero")
-    public void validate_the_file_size_is_not_zero() {
-        System.out.println("Inside Given");
+    @Then("Validate the excel file size is not zero")
+    public void validate_the_file_size_is_not_zero() throws IOException {
+        logger.info("Verifying the number of rows and columns in the excel file - should be equal to row, column count of web table");
+        int tableRowCount = rowElements.size();
+        int tableColumnCount = columnElements.size();
+        ExcelAPI excelAPI = new ExcelAPI("src/excelExportAndFileIO/FBBusiness.xlsx");
+        int excelRowCount = excelAPI.getRowCount("tableOne");
+        int excelColumnCount = excelAPI.getColumnCount("tableOne");
+        logger.info("Excel sheet row count:\t" + excelRowCount);
+        logger.info("Excel sheet column count:\t" + excelColumnCount);
+        Assert.assertEquals(excelRowCount, tableRowCount);
+        Assert.assertEquals(excelColumnCount, tableColumnCount);
     }
 
     @And("Navigate to About Page")
     public void navigate_to_about_page() {
-        System.out.println("Inside Given");
+        logger.info("Navigating to About page..");
+        waitForElement(aboutPageLink, Duration.ofSeconds(2000));
+        aboutPageLink.click();
+        waitForElement(whoWeAreTab, Duration.ofSeconds(2000));
+        Assert.assertTrue(whoWeAreTab.isDisplayed());
+        tearDown();
     }
-
 }

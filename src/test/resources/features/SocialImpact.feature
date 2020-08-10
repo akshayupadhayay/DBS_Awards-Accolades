@@ -5,10 +5,8 @@ Feature: Learn More About DBS Singapore
     Given Browser is Open
     And User is already on Sustainability Creating Social Impact page
     When <City> F&B businesses data is available and displayed for user
-    Then Read & retrieve the table data from cells
-    Then Copy and Store the data into a database(Excel)
-    Then Save the file under folder structure
-    Then Validate the file size is not zero
+    Then Read & retrieve the table data from cells and write to excel
+    Then Validate the excel file size is not zero
     And Navigate to About Page
 
     Examples:

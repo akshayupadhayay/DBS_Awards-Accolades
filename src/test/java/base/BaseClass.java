@@ -57,6 +57,11 @@ public class BaseClass {
 		return driver;
 	}
 
+	public void tearDown(){
+        driver.close();
+        driver.quit();
+    }
+
 	/**
     * wait until expected element is visible
     * @param   element     element to be expected
