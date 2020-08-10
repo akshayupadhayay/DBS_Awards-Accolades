@@ -11,17 +11,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcelAPI {
-    public FileInputStream fis = null;
-    public FileOutputStream fos = null;
-    public XSSFWorkbook workbook = null;
-    public XSSFSheet sheet = null;
-    public XSSFRow row = null;
-    public XSSFCell cell = null;
-    String xlsFilePath;
+    private XSSFWorkbook workbook = null;
+    private XSSFSheet sheet = null;
+    private XSSFRow row = null;
+    private XSSFCell cell = null;
+    private final String xlsFilePath;
 
     public ExcelAPI(String xlsFilePath) throws IOException {
         this.xlsFilePath = xlsFilePath;
-        fis = new FileInputStream(xlsFilePath);
+        FileInputStream fis = new FileInputStream(xlsFilePath);
         workbook = new XSSFWorkbook(fis);
         fis.close();
     }
@@ -69,7 +67,7 @@ public class ExcelAPI {
                 cell = row.createCell(colNum);
             }
             cell.setCellValue(value);
-            fos = new FileOutputStream(xlsFilePath);
+            FileOutputStream fos = new FileOutputStream(xlsFilePath);
             workbook.write(fos);
             fos.close();
         } catch (Exception e) {

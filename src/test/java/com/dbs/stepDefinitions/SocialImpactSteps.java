@@ -1,6 +1,6 @@
-package stepDefinition;
+package com.dbs.stepDefinitions;
 
-import base.BaseClass;
+import basePackage.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,6 +14,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.ExcelAPI;
+import utility.ScreenshotHelper;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -22,9 +23,6 @@ import java.util.List;
 
 public class SocialImpactSteps extends BaseClass {
 
-    /**
-     * Logger for info logs, WebDriverWait for elements to load
-     */
     Logger logger = LogManager.getLogger(SocialImpactSteps.class.getName());
 
     /**
@@ -48,6 +46,7 @@ public class SocialImpactSteps extends BaseClass {
             logger.info("DBS default page is launched");
             driver.get(defaultUrl);
             Assert.assertEquals("DBS Bank | Singapore", driver.getTitle());
+            ScreenshotHelper.takeScreenshot("Browser_Page_Check", driver);
             return driver.getCurrentUrl().equals(prop.getProperty("defaultUrl"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,17 +55,19 @@ public class SocialImpactSteps extends BaseClass {
     }
 
     @And("User is already on Sustainability Creating Social Impact page")
-    public void user_is_already_on_sustainability_creating_social_impact_page() {
+    public void user_is_already_on_sustainability_creating_social_impact_page() throws IOException, InterruptedException {
         waitForElement(learnMore, Duration.ofSeconds(2000));
         learnMore.click();
+        ScreenshotHelper.takeScreenshot("Sustainability_Page_Check", driver);
         Assert.assertTrue(socialImpactPage.isDisplayed());
     }
 
-    @When("Singapore F&B businesses data is available and displayed for user")
-    public void singapore_f_b_businesses_data_is_available_and_displayed_for_user() {
-        waitForElement(citySingapore, Duration.ofSeconds(2000));
+    @When("^(.*) F&B businesses data is available and displayed for user$")
+    public void singapore_f_b_businesses_data_is_available_and_displayed_for_user(String cityName) throws IOException, InterruptedException {
+        waitForElement(citySingapore, Duration.ofSeconds(3000));
         citySingapore.click();
-        Assert.assertTrue(citySingaporeIsActive.isEnabled());
+        ScreenshotHelper.takeScreenshot("FB_Business_Page_Check", driver);
+        Assert.assertEquals(citySingapore.getText(), cityName);
     }
 
     @Then("Read & retrieve the table data from cells and write to excel")
@@ -106,12 +107,12 @@ public class SocialImpactSteps extends BaseClass {
     }
 
     @And("Navigate to About Page")
-    public void navigate_to_about_page() {
+    public void navigate_to_about_page() throws IOException, InterruptedException {
         logger.info("Navigating to About page..");
         waitForElement(aboutPageLink, Duration.ofSeconds(2000));
         aboutPageLink.click();
         waitForElement(whoWeAreTab, Duration.ofSeconds(2000));
+        ScreenshotHelper.takeScreenshot("AboutTo_Page_Check", driver);
         Assert.assertTrue(whoWeAreTab.isDisplayed());
-        tearDown();
     }
 }

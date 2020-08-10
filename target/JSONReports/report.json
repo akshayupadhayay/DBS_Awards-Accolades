@@ -1,0 +1,212 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-08-10T16:40:14.522Z",
+        "line": 14,
+        "name": "Navigate to DBS Learn More page to collect F\u0026B Businesses data and store in a excel file",
+        "description": "",
+        "id": "learn-more-about-dbs-singapore;navigate-to-dbs-learn-more-page-to-collect-f\u0026b-businesses-data-and-store-in-a-excel-file;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 12581475800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Browser is Open",
+            "match": {
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.browserIsOpen()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4458819600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User is already on Sustainability Creating Social Impact page",
+            "match": {
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.user_is_already_on_sustainability_creating_social_impact_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2659892800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Singapore F\u0026B businesses data is available and displayed for user",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Singapore",
+                  "offset": 0
+                }
+              ],
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.singapore_f_b_businesses_data_is_available_and_displayed_for_user(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2298001100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Read \u0026 retrieve the table data from cells and write to excel",
+            "match": {
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.read_retrieve_the_table_data_from_cells_and_write_to_excel()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 44996200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Validate the excel file size is not zero",
+            "match": {
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.validate_the_file_size_is_not_zero()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4612891200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Navigate to About Page",
+            "match": {
+              "location": "com.dbs.stepDefinitions.SocialImpactSteps.navigate_to_about_page()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@SocialImpactScenario"
+          },
+          {
+            "name": "@SocialImpactTest"
+          }
+        ]
+      }
+    ],
+    "name": "Learn More About DBS Singapore",
+    "description": "",
+    "id": "learn-more-about-dbs-singapore",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/aSocialImpact.feature",
+    "tags": [
+      {
+        "name": "@SocialImpactScenario",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2020-08-10T16:40:41.281Z",
+        "line": 12,
+        "name": "Navigate to Awards \u0026 Accolades page and validate the award names and captions",
+        "description": "",
+        "id": "play-with-awards-\u0026-accolades-page;navigate-to-awards-\u0026-accolades-page-and-validate-the-award-names-and-captions;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5421155700,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Already on Awards \u0026 Accolades page",
+            "match": {
+              "location": "com.dbs.stepDefinitions.AwardsAccoladesSteps.already_on_awards_accolades_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2599684700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "The awards are displayed",
+            "match": {
+              "location": "com.dbs.stepDefinitions.AwardsAccoladesSteps.the_awards_are_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16997400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Verify the total awards displayed are 22",
+            "match": {
+              "arguments": [
+                {
+                  "val": "22",
+                  "offset": 38
+                }
+              ],
+              "location": "com.dbs.stepDefinitions.AwardsAccoladesSteps.verify_the_total_awards_displayed_are(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5060345200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Validate all awards names and captions",
+            "match": {
+              "location": "com.dbs.stepDefinitions.AwardsAccoladesSteps.validate_all_awards_names_and_captions()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AwardsAccoladesScenario"
+          },
+          {
+            "name": "@AwardsAccoladesTest"
+          }
+        ]
+      }
+    ],
+    "name": "Play with Awards \u0026 Accolades page",
+    "description": "",
+    "id": "play-with-awards-\u0026-accolades-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/bAwardsAccolades.feature",
+    "tags": [
+      {
+        "name": "@AwardsAccoladesScenario",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

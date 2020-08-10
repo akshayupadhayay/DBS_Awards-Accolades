@@ -1,0 +1,48 @@
+2020-08-11 00:25:08 INFO  SocialImpactSteps:46 - DBS default page is launched
+2020-08-11 00:25:20 INFO  SocialImpactSteps:78 - Table row count:	6
+2020-08-11 00:25:20 INFO  SocialImpactSteps:79 - Table column count:	5
+2020-08-11 00:25:22 INFO  SocialImpactSteps:90 - Verifying that the web table is displayed - Map size should be greater than zero
+2020-08-11 00:25:22 INFO  SocialImpactSteps:92 - Web Table size is 30
+2020-08-11 00:25:22 INFO  SocialImpactSteps:97 - Verifying the number of rows and columns in the excel file - should be equal to row, column count of web table
+2020-08-11 00:25:22 INFO  SocialImpactSteps:103 - Excel sheet row count:	6
+2020-08-11 00:25:22 INFO  SocialImpactSteps:104 - Excel sheet column count:	5
+2020-08-11 00:25:22 INFO  SocialImpactSteps:111 - Navigating to About page..
+2020-08-11 00:25:27 INFO  AwardsAccoladesSteps:38 - Navigate to Awards and Accolades
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - Euromoney----------World's Best Bank 2019
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - The Banker----------Bank of the Year 2018
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - Global Finance----------Best Bank in the World 2018
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - Euromoney----------Awards For Excellence
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Banks
+2020-08-11 00:25:35 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Investment Banks and Derivatives Providers
+2020-08-11 00:30:51 INFO  SocialImpactSteps:46 - DBS default page is launched
+2020-08-11 00:31:05 INFO  SocialImpactSteps:78 - Table row count:	6
+2020-08-11 00:31:05 INFO  SocialImpactSteps:79 - Table column count:	5
+2020-08-11 00:31:07 INFO  SocialImpactSteps:90 - Verifying that the web table is displayed - Map size should be greater than zero
+2020-08-11 00:31:07 INFO  SocialImpactSteps:92 - Web Table size is 30
+2020-08-11 00:31:07 INFO  SocialImpactSteps:97 - Verifying the number of rows and columns in the excel file - should be equal to row, column count of web table
+2020-08-11 00:31:07 INFO  SocialImpactSteps:103 - Excel sheet row count:	6
+2020-08-11 00:31:07 INFO  SocialImpactSteps:104 - Excel sheet column count:	5
+2020-08-11 00:31:07 INFO  SocialImpactSteps:111 - Navigating to About page..
+2020-08-11 00:31:12 INFO  AwardsAccoladesSteps:38 - Navigate to Awards and Accolades
+2020-08-11 00:31:19 INFO  AwardsAccoladesSteps:78 - Euromoney----------World's Best Bank 2019
+2020-08-11 00:31:20 INFO  AwardsAccoladesSteps:78 - The Banker----------Bank of the Year 2018
+2020-08-11 00:31:20 INFO  AwardsAccoladesSteps:78 - Global Finance----------Best Bank in the World 2018
+2020-08-11 00:31:20 INFO  AwardsAccoladesSteps:78 - Euromoney----------Awards For Excellence
+2020-08-11 00:31:20 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Banks
+2020-08-11 00:31:20 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Investment Banks and Derivatives Providers
+2020-08-11 00:40:22 INFO  SocialImpactSteps:46 - DBS default page is launched
+2020-08-11 00:40:34 INFO  SocialImpactSteps:78 - Table row count:	6
+2020-08-11 00:40:34 INFO  SocialImpactSteps:79 - Table column count:	5
+2020-08-11 00:40:36 INFO  SocialImpactSteps:90 - Verifying that the web table is displayed - Map size should be greater than zero
+2020-08-11 00:40:36 INFO  SocialImpactSteps:92 - Web Table size is 30
+2020-08-11 00:40:36 INFO  SocialImpactSteps:97 - Verifying the number of rows and columns in the excel file - should be equal to row, column count of web table
+2020-08-11 00:40:36 INFO  SocialImpactSteps:103 - Excel sheet row count:	6
+2020-08-11 00:40:36 INFO  SocialImpactSteps:104 - Excel sheet column count:	5
+2020-08-11 00:40:36 INFO  SocialImpactSteps:111 - Navigating to About page..
+2020-08-11 00:40:41 INFO  AwardsAccoladesSteps:38 - Navigate to Awards and Accolades
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - Euromoney----------World's Best Bank 2019
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - The Banker----------Bank of the Year 2018
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - Global Finance----------Best Bank in the World 2018
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - Euromoney----------Awards For Excellence
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Banks
+2020-08-11 00:40:49 INFO  AwardsAccoladesSteps:78 - Global Finance----------World's Best Investment Banks and Derivatives Providers
