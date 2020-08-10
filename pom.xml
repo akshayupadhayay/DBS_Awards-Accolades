@@ -19,6 +19,7 @@
         <selenium.java.version>4.0.0-alpha-5</selenium.java.version>
         <selenium.webdrivermanager.version>4.1.0</selenium.webdrivermanager.version>
         <log4j.version>1.2.17</log4j.version>
+        <apache.poi.version>4.1.1</apache.poi.version>
     </properties>
 
     <dependencies>
@@ -65,6 +66,12 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache.poi.version}</version>
         </dependency>
     </dependencies>
 

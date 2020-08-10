@@ -1,26 +1,20 @@
 package stepDefinition;
 
-import base.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.joda.time.Seconds;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Util;
 
+import base.BaseClass;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -78,8 +72,8 @@ public class SocialImpactSteps extends BaseClass {
     public void read_retrieve_the_table_data_from_cells() {
         int tableRowCount = rowElements.size();
         int tableColumnCount = columnElements.size();
-        System.out.println("Table row count:\t" + tableRowCount);
-        System.out.println("Table column count:\t" + tableColumnCount);
+        logger.info("Table row count:\t" + tableRowCount);
+        logger.info("Table column count:\t" + tableColumnCount);
 
         LinkedHashMap<String, String> cellData = new LinkedHashMap<>();
         for(int i = 1; i <= tableRowCount; i++){

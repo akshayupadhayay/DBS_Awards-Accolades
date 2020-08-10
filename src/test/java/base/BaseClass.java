@@ -1,29 +1,22 @@
 package base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utility.Util;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import utils.Util;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Util;
 
 public class BaseClass {
 	Logger logger = LogManager.getLogger(BaseClass.class.getName());
