@@ -20,7 +20,7 @@
 `JSON reports are saved at /target/JSONReports/`
 
 ## Below are some Sample HTML reports
-<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/features_1.JPG" width="1000" height="450">
-<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/steps_1.JPG" width="1000" height="450">
-<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/tags_1.JPG" width="1000" height="450">
-<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/feature_report_1.JPG" width="1000" height="450">
+<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/features_1.JPG" width="1000" height="400">
+<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/steps_1.JPG" width="1000" height="400">
+<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/tags_1.JPG" width="1000" height="400">
+<img src="https://github.com/akshayupadhayay/DBS_Awards-Accolades/blob/master/src/github/feature_report_1.JPG" width="1000" height="400">
